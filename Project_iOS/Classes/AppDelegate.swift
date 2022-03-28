@@ -5,6 +5,7 @@
 //  Created by Shivanshu Verma on 2022-03-02.
 //
 
+
 import UIKit
 import CoreData
 import SQLite3
@@ -27,8 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         checkAndCreateDatabase()
         readFromDataBase()
         
+        
+        
         return true
     }
+    
+   
     func checkAndCreateDatabase(){
             var success = false
             let fileManager = FileManager.default
