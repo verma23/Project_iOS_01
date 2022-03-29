@@ -32,6 +32,14 @@ class MovieDetailViewController: UIViewController,YTPlayerViewDelegate {
         playerView.playVideo()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? BookingViewController {
+            dest.selection = MovieLabel.text
+           
+            
+        }
+    }
+   
     
     
 

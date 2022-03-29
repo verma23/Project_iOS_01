@@ -15,20 +15,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var databaseName : String? = "projDatabase.db"
     var databasePath : String?
+    
+    var databaseName2 : String? = "IOSProject.db"
+    var databasePath2 : String?
+    
     var people : [Data] = []
     
+    var theatres : [String] = []
 
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let documentPaths  = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentDir = documentPaths[0]
         databasePath = documentDir.appending("/" + databaseName!)
+        
+        let documentPathss  = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentDirr = documentPathss[0]
+        databasePath2 = documentDirr.appending("/" + databaseName2!)
     
         
         checkAndCreateDatabase()
+        checkAndCreateDatabase2()
         readFromDataBase()
         
-        
+        theatres = ["SilverCity Brampton", "Courtney Park Mississauga", "Fairview Mall Toronto", "Galaxy Guelph", "Empress Walk Toronto"]
         
         return true
     }
@@ -36,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
     func checkAndCreateDatabase(){
             var success = false
+      
             let fileManager = FileManager.default
             
             success = fileManager.fileExists(atPath: databasePath!)
@@ -43,8 +55,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if success{
                 return
             }
+        
             let databasePathFromApp = Bundle.main.resourcePath?.appending("/" + databaseName!)
             try? fileManager.copyItem(atPath: databasePathFromApp!, toPath: databasePath! )
+            return
+            
+            
+        }
+    
+    func checkAndCreateDatabase2(){
+            var success = false
+      
+            let fileManager = FileManager.default
+            
+            success = fileManager.fileExists(atPath: databasePath2!)
+            
+            if success{
+                return
+            }
+        
+            let databasePathFromApp = Bundle.main.resourcePath?.appending("/" + databaseName2!)
+            try? fileManager.copyItem(atPath: databasePathFromApp!, toPath: databasePath2! )
             return
             
             
@@ -162,6 +193,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     // MARK: UISceneSession Lifecycle
+    
+    func insertIntoDatabaseBookings(ticket : TicketBook) -> Bool {
+        var db : OpaquePointer? = nil
+        var returnCode : Bool = true
+        
+        if sqlite3_open(self.databasePath2,  &db) == SQLITE_OK{
+            var insertStatement : OpaquePointer? = nil
+            var insertStatementString : String = "insert into ticketBookings values(NULL, ?, ?, ?, ?, ?, ?)"
+            
+            if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK{
+                let movienamStr = ticket.moviename! as NSString
+                let seatsStr = ticket.seats! as NSString
+                let dateTimeStr = ticket.dateTime! as NSString
+                let ticketTypeStr = ticket.ticketType! as NSString
+                let theatreStr = ticket.theatre! as NSString
+                let quantityStr = ticket.quantity! as NSString
+                
+                
+                sqlite3_bind_text(insertStatement, 1, movienamStr.utf8String, -1, nil)
+                sqlite3_bind_text(insertStatement, 2, seatsStr.utf8String, -1, nil)
+                sqlite3_bind_text(insertStatement, 3, dateTimeStr.utf8String, -1, nil)
+                sqlite3_bind_text(insertStatement, 4, ticketTypeStr.utf8String, -1, nil)
+                sqlite3_bind_text(insertStatement, 5, theatreStr.utf8String, -1, nil)
+                sqlite3_bind_text(insertStatement, 6, quantityStr.utf8String, -1, nil)
+                
+                
+                if sqlite3_step(insertStatement) == SQLITE_DONE{
+                    let rowID = sqlite3_last_insert_rowid(db)
+                    print("Successfully inserted row \(rowID)")
+                    
+                }
+                else{
+                    print("Could not insert row")
+                    returnCode = false
+                }
+                sqlite3_finalize(insertStatement)
+            }
+            else{
+                print("Insert not working")
+                returnCode = false
+            }
+            sqlite3_close(db)
+        }
+        else{
+            print("unable to open database")
+            returnCode = false
+        }
+        
+        return returnCode
+    }
+
+    // MARK: UIScen
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
