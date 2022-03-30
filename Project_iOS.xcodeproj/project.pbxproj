@@ -25,7 +25,10 @@
 		9216110B27F2A186001FD1D6 /* IOSProject.db in Resources */ = {isa = PBXBuildFile; fileRef = 9216110A27F2A186001FD1D6 /* IOSProject.db */; };
 		9216110E27F2A45A001FD1D6 /* bookticket.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9216110C27F2A45A001FD1D6 /* bookticket.jpg */; };
 		9216110F27F2A45A001FD1D6 /* bookmyshow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9216110D27F2A45A001FD1D6 /* bookmyshow.jpg */; };
+		9216111127F2ACF9001FD1D6 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216111027F2ACF9001FD1D6 /* HelpViewController.swift */; };
 		9231607527F269EF0051668D /* TicketBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9231607427F269EF0051668D /* TicketBook.swift */; };
+		9278D03F27F3A8030025708C /* HelpDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9278D03E27F3A8030025708C /* HelpDetailViewController.swift */; };
+		9278D07027F3CE9D0025708C /* back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9278D06F27F3CE9D0025708C /* back.jpg */; };
 		92FED52C27F2652600E6ECF7 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FED52B27F2652600E6ECF7 /* BookingViewController.swift */; };
 		AFAB4A0DF2E271EFECB19FD7 /* Pods_Project_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA51A1E3A2C7FFEC6B40DA85 /* Pods_Project_iOSTests.framework */; };
 		E7FDE17C27EEC27600F8C78A /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDE17B27EEC27600F8C78A /* MovieCollectionViewCell.swift */; };
@@ -75,7 +78,10 @@
 		9216110A27F2A186001FD1D6 /* IOSProject.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = IOSProject.db; sourceTree = "<group>"; };
 		9216110C27F2A45A001FD1D6 /* bookticket.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bookticket.jpg; sourceTree = "<group>"; };
 		9216110D27F2A45A001FD1D6 /* bookmyshow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bookmyshow.jpg; sourceTree = "<group>"; };
+		9216111027F2ACF9001FD1D6 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		9231607427F269EF0051668D /* TicketBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketBook.swift; sourceTree = "<group>"; };
+		9278D03E27F3A8030025708C /* HelpDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDetailViewController.swift; sourceTree = "<group>"; };
+		9278D06F27F3CE9D0025708C /* back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back.jpg; sourceTree = "<group>"; };
 		92FED52B27F2652600E6ECF7 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		99C942D45A15A864F53E6CC6 /* Pods-Project_iOS-Project_iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_iOS-Project_iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Project_iOS-Project_iOSUITests/Pods-Project_iOS-Project_iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB7E01B776C2D6A341C67A34 /* Pods-Project_iOS-Project_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_iOS-Project_iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Project_iOS-Project_iOSUITests/Pods-Project_iOS-Project_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +204,8 @@
 				E7FDE17B27EEC27600F8C78A /* MovieCollectionViewCell.swift */,
 				E7FDE17F27EEDEB800F8C78A /* MovieDetailViewController.swift */,
 				92FED52B27F2652600E6ECF7 /* BookingViewController.swift */,
+				9216111027F2ACF9001FD1D6 /* HelpViewController.swift */,
+				9278D03E27F3A8030025708C /* HelpDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -205,6 +213,7 @@
 		10D037E227DC18A70067720F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9278D06F27F3CE9D0025708C /* back.jpg */,
 				9216110D27F2A45A001FD1D6 /* bookmyshow.jpg */,
 				9216110C27F2A45A001FD1D6 /* bookticket.jpg */,
 				10D037EB27DC1C850067720F /* bg_main.jpg */,
@@ -350,6 +359,7 @@
 				9216110B27F2A186001FD1D6 /* IOSProject.db in Resources */,
 				10D036E727D029BF0067720F /* Assets.xcassets in Resources */,
 				9216110E27F2A45A001FD1D6 /* bookticket.jpg in Resources */,
+				9278D07027F3CE9D0025708C /* back.jpg in Resources */,
 				10D037F227DC28F70067720F /* projDatabase.db in Resources */,
 				10D037EC27DC1C850067720F /* bg_main.jpg in Resources */,
 				10D036E527D029BE0067720F /* Main.storyboard in Resources */,
@@ -487,7 +497,9 @@
 				10D036E227D029BE0067720F /* ViewController.swift in Sources */,
 				E7FDE17C27EEC27600F8C78A /* MovieCollectionViewCell.swift in Sources */,
 				10D036DE27D029BE0067720F /* AppDelegate.swift in Sources */,
+				9278D03F27F3A8030025708C /* HelpDetailViewController.swift in Sources */,
 				E7FDE17E27EECE2800F8C78A /* Movie.swift in Sources */,
+				9216111127F2ACF9001FD1D6 /* HelpViewController.swift in Sources */,
 				E7FDE18027EEDEB800F8C78A /* MovieDetailViewController.swift in Sources */,
 				92FED52C27F2652600E6ECF7 /* BookingViewController.swift in Sources */,
 				10D036E027D029BE0067720F /* SceneDelegate.swift in Sources */,

@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var people : [Data] = []
     
     var theatres : [String] = []
+    
+    //var selectedQuestion : String = ""
+    
+    var selectedAnswer : String = ""
 
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

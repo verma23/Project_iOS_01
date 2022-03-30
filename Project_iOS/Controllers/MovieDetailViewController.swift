@@ -39,7 +39,10 @@ class MovieDetailViewController: UIViewController,YTPlayerViewDelegate {
             
         }
     }
-   
+    @IBAction func unwindToDetailViewController(sender : UIStoryboardSegue)
+    {
+        
+    }
     
     
 

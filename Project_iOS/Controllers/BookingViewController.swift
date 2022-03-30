@@ -23,6 +23,7 @@ class BookingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet var lbmovie : UILabel!
         
     
+
     
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -118,6 +119,8 @@ class BookingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         alertcntroller.addAction(cancelAction)
         present(alertcntroller, animated: true)
     }
+    
+    
     
     
     override func viewDidLoad() {
