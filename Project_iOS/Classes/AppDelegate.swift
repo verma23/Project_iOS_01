@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import SQLite3
 
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -195,6 +196,67 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else{
             print ("unable to open Database")
         }
+    }
+    
+    
+    func VerifyLoginFromDatase(uEmail: String , uPass: String ) -> Bool
+    {
+        var  x : Bool = false
+            people.removeAll()
+           var  db : OpaquePointer? = nil
+            if sqlite3_open(self.databasePath,  &db) == SQLITE_OK
+            {
+                print("Success")
+                
+                var queryState : OpaquePointer? = nil
+                var queryStatementString : String = "select * from entries where Email = '\(uEmail)' and Confirm = '\(uPass)' "
+                
+                if sqlite3_prepare_v2(db, queryStatementString, -1, &queryState, nil) == SQLITE_OK {
+                    
+                    while sqlite3_step(queryState) == SQLITE_ROW
+                    {
+                        let id: Int = Int(sqlite3_column_int(queryState, 0))
+                        let cFname = sqlite3_column_text(queryState, 1)
+                        let cLname = sqlite3_column_text(queryState, 2 )
+                        let cEmailAddress = sqlite3_column_text(queryState, 3)
+                        let cPhoneNumber = sqlite3_column_text(queryState, 4)
+                        let cNewPass = sqlite3_column_text(queryState, 5)
+                        let cConfirmPass = sqlite3_column_text(queryState, 6)
+                        
+                        let firstName = String(cString: cFname!)
+                        let lastName = String(cString: cLname!)
+                        let emailAddress = String(cString: cEmailAddress!)
+                        let phoneNum = String(cString: cPhoneNumber!)
+                        let newPass = String(cString: cNewPass!)
+                        let confirmPass = String(cString: cConfirmPass!)
+                        
+                        
+                        let data : Data = Data.init()
+                        data.initWithData(theRow:  id, theFname: firstName, theLname: lastName, theEmail: emailAddress,thePhone: phoneNum,theNpass: newPass, theConfirmpass: confirmPass)
+                        people.append(data)
+                        print("Result")
+                        print("\(id) | \(firstName) | \(emailAddress) ")
+                    
+                        x = true
+                        
+                    }
+                    sqlite3_finalize(queryState)
+                    
+                }
+                else
+                {
+                    print("Select Statement Error")
+                    x = false
+                }
+                sqlite3_close(db)
+            }
+            else{
+                print ("unable to open Database")
+                x = false
+            }
+        return x
+        
+        
     }
     // MARK: UISceneSession Lifecycle
     

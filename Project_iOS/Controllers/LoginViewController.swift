@@ -7,17 +7,60 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-    
-    
 
+
+class LoginViewController: UIViewController,UITextFieldDelegate {
+    
+    @IBOutlet var userEmail: UITextField!
+    
+    @IBOutlet var userPass: UITextField!
+    
+    let mainDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+   
+    @IBAction func CheckTextFields(_ sender: Any)
+    {
+        let userEmailAdd = userEmail.text
+        let user_Pass = userPass.text
+        
+        if(((userEmailAdd?.isEmpty) == true) || ((user_Pass?.isEmpty) == true))
+        {
+            displayMyAlerMessage(userMessage: "All Fields Are Required")
+        }
+        
+    }
+    
+    @IBAction func verifyuserLogin()
+    {
+
+        var result = mainDelegate.VerifyLoginFromDatase(uEmail: userEmail.text!, uPass: userPass.text!)
+
+
+
+        if(result == true)
+        {
+            
+            performSegue(withIdentifier: "ViewController", sender: self)
+         
+        }
+    }
+    
+    
+    func displayMyAlerMessage(userMessage : String)
+    {
+        var myAlert = UIAlertController(title: "App Alert", message: userMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        myAlert.addAction(okAction)
+        present(myAlert, animated: true)
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-       
     }
+   
     
 
     /*
