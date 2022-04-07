@@ -6,7 +6,7 @@ target 'Project_iOS' do
   use_frameworks!
 
   pod 'youtube-ios-player-helper'
-  pod 'FBSDKLoginKit'
+  
   
 
   target 'Project_iOSTests' do
