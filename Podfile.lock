@@ -1,33 +1,16 @@
 PODS:
-  - FBAEMKit (13.1.0):
-    - FBSDKCoreKit_Basics (= 13.1.0)
-  - FBSDKCoreKit (13.1.0):
-    - FBAEMKit (= 13.1.0)
-    - FBSDKCoreKit_Basics (= 13.1.0)
-  - FBSDKCoreKit_Basics (13.1.0)
-  - FBSDKLoginKit (13.1.0):
-    - FBSDKCoreKit (= 13.1.0)
   - youtube-ios-player-helper (1.0.4)
 
 DEPENDENCIES:
-  - FBSDKLoginKit
   - youtube-ios-player-helper
 
 SPEC REPOS:
   trunk:
-    - FBAEMKit
-    - FBSDKCoreKit
-    - FBSDKCoreKit_Basics
-    - FBSDKLoginKit
     - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
-  FBAEMKit: 9ce89760a23f03ffecd907c8e1f3201160f2dcc7
-  FBSDKCoreKit: eff97dea778dbe6cc4498959cffb619c75675102
-  FBSDKCoreKit_Basics: c151609a1cf6976a5958febcf0043266a8fd5151
-  FBSDKLoginKit: 42932c7ad6f6b91854fc0a6bcc79b7e807bcde4b
   youtube-ios-player-helper: e9b97535e816db3152179d84d999bc1807ecd689
 
-PODFILE CHECKSUM: b45324260565a801f44c29463a2f9180e8c10dd1
+PODFILE CHECKSUM: 860725015ae8b67f9f75a246bbb3a3c82822ec2b
 
 COCOAPODS: 1.11.3
