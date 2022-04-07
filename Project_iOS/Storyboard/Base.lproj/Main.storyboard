@@ -575,7 +575,14 @@
                                 <rect key="frame" x="-1" y="34" width="427" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Welcome to MoviePlex" id="WT1-fS-vbI"/>
+                                    <navigationItem title="Welcome to MoviePlex" id="WT1-fS-vbI">
+                                        <barButtonItem key="rightBarButtonItem" image="questionmark.app.fill" catalog="system" id="kfm-a6-Lcw">
+                                            <color key="tintColor" systemColor="systemGreenColor"/>
+                                            <connections>
+                                                <segue destination="W3R-j7-7Gi" kind="presentation" id="iKJ-np-4lz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEA-Dg-Tbn">
@@ -611,7 +618,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GX6-iY-j3S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1531" y="-165"/>
+            <point key="canvasLocation" x="1530.8411214953271" y="-165.22678185745141"/>
         </scene>
         <!--Booking View Controller-->
         <scene sceneID="VIL-gw-Q5F">
@@ -1081,7 +1088,14 @@
                                 <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="MoviePlex" id="XHY-7u-4CX"/>
+                                    <navigationItem title="MoviePlex" id="XHY-7u-4CX">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.backward.fill" catalog="system" id="iyD-Vz-aHB">
+                                            <color key="tintColor" systemColor="systemGreenColor"/>
+                                            <connections>
+                                                <segue destination="XYV-SC-lGi" kind="presentation" id="pvt-lJ-5n8"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="How may we help you?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TjA-tC-zVa">
@@ -1268,8 +1282,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cw2-fj-YdO"/>
-        <segue reference="BMK-63-6hi"/>
+        <segue reference="iKJ-np-4lz"/>
+        <segue reference="hBc-ct-VOb"/>
         <segue reference="EEj-fg-2V5"/>
         <segue reference="cGj-9J-XbF"/>
     </inferredMetricsTieBreakers>
@@ -1283,6 +1297,7 @@
         <image name="login" width="1000" height="1000"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="movie" width="840" height="593"/>
+        <image name="questionmark.app.fill" catalog="system" width="128" height="114"/>
         <image name="register" width="612" height="612"/>
         <image name="ticket" width="512" height="512"/>
         <systemColor name="labelColor">

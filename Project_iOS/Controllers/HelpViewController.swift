@@ -148,10 +148,10 @@ class HelpViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableCell.textLabel?.numberOfLines = 0
         tableCell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         
-        tableView.backgroundView = UIImageView(image: UIImage(named: "back.jpg"))
+        tableView.backgroundView = UIImageView(image: UIImage(named: "bg_main.jpg"))
         
         tableCell.backgroundColor = .clear
-        tableCell.backgroundColor = UIColor(white: 1, alpha: 0.6)
+        tableCell.backgroundColor = UIColor(white: 1, alpha: 0.4)
         
         tableCell.accessoryType = .disclosureIndicator
         
