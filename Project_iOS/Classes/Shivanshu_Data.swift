@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Data: NSObject {
+class Shivanshu_Data: NSObject {
     var id : Int?
     var Fname: String?
     var Lname: String?
@@ -26,6 +26,15 @@ class Data: NSObject {
         PhoneNumber = pn
         newPass = p
         confirmPass = c
+        
+    }
+    
+    func initWithDetails(theRow r : Int, theEmail em: String, theName nam : String, theNumber n : String)
+    {
+    id = r
+    EmailAddress = em
+        Fname = nam
+        PhoneNumber = n
         
     }
 }

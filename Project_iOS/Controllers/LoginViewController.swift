@@ -30,6 +30,18 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         
     }
     
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as?  ViewController{
+            dest.emailbl = userEmail.text
+           
+            
+        }
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
     @IBAction func verifyuserLogin()
     {
 
@@ -59,6 +71,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
    
     

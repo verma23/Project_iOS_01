@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var movieCollectionView: UICollectionView!
     
     var searching = false
+    var emailbl : String! 
+    @IBOutlet var userEmailInfo: UILabel!
     
     var searchedMovie = [Movie]()
     
@@ -40,9 +42,13 @@ class ViewController: UIViewController {
         movieCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
         self.movieCollectionView?.backgroundView = backgroundImage
         
+        userEmailInfo.text = emailbl
+        
         configureSearchController()
         
     }
+    
+    
     
     private func configureSearchController()
     {
@@ -123,6 +129,11 @@ extension ViewController: UICollectionViewDataSource, UISearchResultsUpdating, U
             dest.selection = movies[index.row].title
             dest.selection1 = movies[index.row].summary
             dest.selection3 = movies[index.row].trailer
+            
+        }
+        if let dest1 = segue.destination as?  Shivanshu_AccountViewController{
+            dest1.emailLbl = userEmailInfo.text
+           
             
         }
     }

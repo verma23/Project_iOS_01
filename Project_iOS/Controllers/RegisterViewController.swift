@@ -23,7 +23,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
  
     @IBAction func addUserToDatabase(sender : Any){
-        let person = Data.init()
+        let person = Shivanshu_Data.init()
         person.initWithData(theRow: 0, theFname: tFname.text!, theLname: tLname.text!, theEmail: tEmailAdd.text!,thePhone: tPnum.text!, theNpass: tNewPass.text!, theConfirmpass: tConfirmPass.text!)
         let mainDelegate = UIApplication.shared.delegate as! AppDelegate
         let returnCode = mainDelegate.insertIntoDatabase(person: person)

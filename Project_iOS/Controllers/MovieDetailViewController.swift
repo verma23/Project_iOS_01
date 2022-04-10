@@ -13,6 +13,7 @@ class MovieDetailViewController: UIViewController,YTPlayerViewDelegate {
     var selection: String!
     var selection1: String!
     var selection3: String!
+    
     @IBOutlet private weak var MovieLabel: UILabel!
     @IBOutlet private weak var MovieSummary: UILabel!
     @IBOutlet var playerView: YTPlayerView!

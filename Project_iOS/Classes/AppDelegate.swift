@@ -16,13 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var databaseName : String? = "projDatabase.db"
     var databasePath : String?
+    var userI : Int?
+    var user_1 : String?
+    var user_2 : String?
     
     var databaseName2 : String? = "IOSProject.db"
     var databasePath2 : String?
     
-    var people : [Data] = []
+    var databaseName3 : String? = "imageData.db"
+    var databasePath3 : String?
+    
+    
+    
+    var people : [Shivanshu_Data] = []
     
     var theatres : [String] = []
+    var img : [imageData] = []
     
     //var selectedQuestion : String = ""
     
@@ -38,17 +47,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let documentPathss  = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentDirr = documentPathss[0]
         databasePath2 = documentDirr.appending("/" + databaseName2!)
+        let DocPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let docDir = DocPath[0]
+        databasePath3 = docDir.appending("/" + databaseName3!)
+        
+        
     
         
         checkAndCreateDatabase()
         checkAndCreateDatabase2()
+        checkAndCreateDatabase3()
         readFromDataBase()
+    
         
         theatres = ["SilverCity Brampton", "Courtney Park Mississauga", "Fairview Mall Toronto", "Galaxy Guelph", "Empress Walk Toronto"]
         
         return true
     }
     
+
    
     func checkAndCreateDatabase(){
             var success = false
@@ -85,8 +102,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             
         }
+    func checkAndCreateDatabase3()
+    {
+        var success = false
+  
+        let fileManager = FileManager.default
+        
+        success = fileManager.fileExists(atPath: databasePath3!)
+        
+        if success{
+            return
+        }
     
-    func insertIntoDatabase(person : Data) -> Bool{
+        let databasePathFromApp = Bundle.main.resourcePath?.appending("/" + databaseName3!)
+        try? fileManager.copyItem(atPath: databasePathFromApp!, toPath: databasePath3! )
+        return
+    }
+    
+    func insertIntoDatabase(person : Shivanshu_Data) -> Bool{
             var db : OpaquePointer? = nil
             var returnCode : Bool = true
             
@@ -141,6 +174,107 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             return returnCode
         }
+    
+    
+    func insertImage(imageInfo: imageData) -> Bool
+    {
+        
+        var db : OpaquePointer? = nil
+        var returnCode : Bool = true
+        
+        if sqlite3_open(self.databasePath3, &db) == SQLITE_OK
+        {
+            
+            var insertState : OpaquePointer? = nil
+            var insetStateString : String = "insert into imageData values(NULL, ?)"
+            
+            if sqlite3_prepare_v2( db,insetStateString, -1, &insertState, nil) == SQLITE_OK
+            {
+                let UimageStr = imageInfo.imgD as! NSString
+            
+            
+                
+                sqlite3_bind_text(insertState, 1, UimageStr.utf8String, -1, nil)
+              
+                
+                if sqlite3_step(insertState) == SQLITE_DONE
+                {
+                    let rowId = sqlite3_last_insert_rowid(db)
+                    print("Succcessfull \(rowId)")
+                }
+                else
+                {
+                    print("fail")
+                    returnCode = false
+                }
+                
+                sqlite3_finalize(insertState)
+                
+            }
+            else
+            {
+                print("insert failed")
+                returnCode = false
+            }
+            sqlite3_close(db)
+        }
+        else
+        {
+            print("Fail")
+            returnCode = false
+        }
+        return returnCode
+        
+        
+    }
+    
+    func readForImage()
+    {
+        img.removeAll()
+       var  db : OpaquePointer? = nil
+        if sqlite3_open(self.databasePath3,  &db) == SQLITE_OK
+        {
+            print("Success")
+            
+            var queryState : OpaquePointer? = nil
+            var queryStatementString : String = "select * from imageData"
+            
+            if sqlite3_prepare_v2(db, queryStatementString, -1, &queryState, nil) == SQLITE_OK {
+                
+                while sqlite3_step(queryState) == SQLITE_ROW
+                {
+                    let id: Int = Int(sqlite3_column_int(queryState, 0))
+                    let cUserIamge = sqlite3_column_text(queryState, 1)
+                    
+                    
+                    let userImg = String(cString: cUserIamge!)
+                   
+                    
+                    
+                    let info : imageData = imageData.init()
+                    info.initWithData(theRow: id, TheimgD: userImg)
+                    img.append(info)
+                    print("Result")
+                    print("\(id) | \(userImg)")
+                    
+                    
+                    
+                    
+                    
+                }
+                sqlite3_finalize(queryState)
+                
+            }
+            else
+            {
+                print("Select Statement Error")
+            }
+            sqlite3_close(db)
+        }
+        else{
+            print ("unable to open Database")
+        }
+    }
         
     func readFromDataBase()
     {
@@ -173,7 +307,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let confirmPass = String(cString: cConfirmPass!)
                     
                     
-                    let data : Data = Data.init()
+                    let data : Shivanshu_Data = Shivanshu_Data.init()
                     data.initWithData(theRow:  id, theFname: firstName, theLname: lastName, theEmail: emailAddress,thePhone: phoneNum,theNpass: newPass, theConfirmpass: confirmPass)
                     people.append(data)
                     print("Result")
@@ -229,9 +363,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         let phoneNum = String(cString: cPhoneNumber!)
                         let newPass = String(cString: cNewPass!)
                         let confirmPass = String(cString: cConfirmPass!)
+                        userI = id
                         
                         
-                        let data : Data = Data.init()
+                        let data : Shivanshu_Data = Shivanshu_Data.init()
                         data.initWithData(theRow:  id, theFname: firstName, theLname: lastName, theEmail: emailAddress,thePhone: phoneNum,theNpass: newPass, theConfirmpass: confirmPass)
                         people.append(data)
                         print("Result")
@@ -258,6 +393,69 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
     }
+    
+    func confirmDetails(userInfo: Int) -> Bool
+    {
+        var  x : Bool = false
+            people.removeAll()
+           var  db : OpaquePointer? = nil
+            if sqlite3_open(self.databasePath,  &db) == SQLITE_OK
+            {
+                print("Success")
+                
+                var queryState : OpaquePointer? = nil
+                var queryStatementString : String = "select * from entries where id = \(userInfo) "
+                
+                if sqlite3_prepare_v2(db, queryStatementString, -1, &queryState, nil) == SQLITE_OK {
+                    
+                    while sqlite3_step(queryState) == SQLITE_ROW
+                    {
+                        let id: Int = Int(sqlite3_column_int(queryState, 0))
+                        let cFname = sqlite3_column_text(queryState, 1)
+                        let cLname = sqlite3_column_text(queryState, 2 )
+                        let cEmailAddress = sqlite3_column_text(queryState, 3)
+                        let cPhoneNumber = sqlite3_column_text(queryState, 4)
+                        let cNewPass = sqlite3_column_text(queryState, 5)
+                        let cConfirmPass = sqlite3_column_text(queryState, 6)
+                        
+                        let firstName = String(cString: cFname!)
+                        let lastName = String(cString: cLname!)
+                        let emailAddress = String(cString: cEmailAddress!)
+                        let phoneNum = String(cString: cPhoneNumber!)
+                        let newPass = String(cString: cNewPass!)
+                        let confirmPass = String(cString: cConfirmPass!)
+                        user_1 = firstName
+                        user_2 = phoneNum
+                        
+                        
+                        let data : Shivanshu_Data = Shivanshu_Data.init()
+                        data.initWithData(theRow:  id, theFname: firstName, theLname: lastName, theEmail: emailAddress,thePhone: phoneNum,theNpass: newPass, theConfirmpass: confirmPass)
+                        
+                        print("Result")
+                        print("\(id) | \(firstName) | \(emailAddress) ")
+                    
+                        x = true
+                        
+                    }
+                    sqlite3_finalize(queryState)
+                    
+                }
+                else
+                {
+                    print("Select Statement Error")
+                    x = false
+                }
+                sqlite3_close(db)
+            }
+            else{
+                print ("unable to open Database")
+                x = false
+            }
+        return x
+        
+        
+    }
+ 
     // MARK: UISceneSession Lifecycle
     
     func insertIntoDatabaseBookings(ticket : TicketBook) -> Bool {

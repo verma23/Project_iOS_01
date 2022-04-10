@@ -2,29 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>CFBundleURLTypes</key>
-    <array>
-      <dict>
-      <key>CFBundleURLSchemes</key>
-      <array>
-        <string>fbAPP-ID</string>
-      </array>
-      </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>691504235531902</string>
-    <key>FacebookClientToken</key>
-    <string>2c8e2cb1c7296c44adfc59e43e377603</string>
-    <key>FacebookDisplayName</key>
-    <string>Project_iOS</string>
-    
-    
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-      <string>fbapi</string>
-      <string>fb-messenger-share-api</string>
-    </array>
-    
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -33,6 +10,17 @@
 			<key>CFBundleURLSchemes</key>
 			<array/>
 		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>691504235531902</string>
+	<key>FacebookClientToken</key>
+	<string>2c8e2cb1c7296c44adfc59e43e377603</string>
+	<key>FacebookDisplayName</key>
+	<string>Project_iOS</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
@@ -53,5 +41,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 </dict>
 </plist>
