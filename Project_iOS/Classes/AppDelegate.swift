@@ -51,7 +51,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let docDir = DocPath[0]
         databasePath3 = docDir.appending("/" + databaseName3!)
         
-        
+        UserDefaults.standard.removeObject(forKey: "movieName")
+        UserDefaults.standard.removeObject(forKey: "seats")
+        UserDefaults.standard.removeObject(forKey: "updatedseats")
+        UserDefaults.standard.removeObject(forKey: "A1")
+        UserDefaults.standard.removeObject(forKey: "A2")
+        UserDefaults.standard.removeObject(forKey: "A3")
+        UserDefaults.standard.removeObject(forKey: "A4")
+        UserDefaults.standard.removeObject(forKey: "A5")
+        UserDefaults.standard.removeObject(forKey: "B1")
+        UserDefaults.standard.removeObject(forKey: "B2")
+        UserDefaults.standard.removeObject(forKey: "B3")
+        UserDefaults.standard.removeObject(forKey: "B4")
+        UserDefaults.standard.removeObject(forKey: "B5")
+        UserDefaults.standard.removeObject(forKey: "C1")
+        UserDefaults.standard.removeObject(forKey: "C2")
+        UserDefaults.standard.removeObject(forKey: "C3")
+        UserDefaults.standard.removeObject(forKey: "C4")
+        UserDefaults.standard.removeObject(forKey: "C5")
+        UserDefaults.standard.removeObject(forKey: "D1")
+        UserDefaults.standard.removeObject(forKey: "D2")
+        UserDefaults.standard.removeObject(forKey: "D3")
+        UserDefaults.standard.removeObject(forKey: "D4")
+        UserDefaults.standard.removeObject(forKey: "D5")
     
         
         checkAndCreateDatabase()

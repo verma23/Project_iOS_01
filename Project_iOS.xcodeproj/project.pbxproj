@@ -31,6 +31,7 @@
 		9278D07027F3CE9D0025708C /* back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9278D06F27F3CE9D0025708C /* back.jpg */; };
 		92FED52C27F2652600E6ECF7 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FED52B27F2652600E6ECF7 /* BookingViewController.swift */; };
 		AFAB4A0DF2E271EFECB19FD7 /* Pods_Project_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA51A1E3A2C7FFEC6B40DA85 /* Pods_Project_iOSTests.framework */; };
+		E73034E12803B3DE00B02C70 /* Karn_SeatsSeclectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73034E02803B3DE00B02C70 /* Karn_SeatsSeclectionViewController.swift */; };
 		E7FDE17C27EEC27600F8C78A /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDE17B27EEC27600F8C78A /* MovieCollectionViewCell.swift */; };
 		E7FDE17E27EECE2800F8C78A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDE17D27EECE2800F8C78A /* Movie.swift */; };
 		E7FDE18027EEDEB800F8C78A /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDE17F27EEDEB800F8C78A /* MovieDetailViewController.swift */; };
@@ -93,6 +94,7 @@
 		BB7E01B776C2D6A341C67A34 /* Pods-Project_iOS-Project_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_iOS-Project_iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Project_iOS-Project_iOSUITests/Pods-Project_iOS-Project_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CE4FDC07F7C2498E9151CAB7 /* Pods-Project_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Project_iOSTests/Pods-Project_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		D7B4115AA5A14831E943F6E2 /* Pods-Project_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Project_iOSTests/Pods-Project_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E73034E02803B3DE00B02C70 /* Karn_SeatsSeclectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Karn_SeatsSeclectionViewController.swift; sourceTree = "<group>"; };
 		E7FDE17B27EEC27600F8C78A /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		E7FDE17D27EECE2800F8C78A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		E7FDE17F27EEDEB800F8C78A /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				9278D03E27F3A8030025708C /* HelpDetailViewController.swift */,
 				EA7AFB1527FEAD1500E6079A /* Shivanshu_AccountViewController.swift */,
 				EA7AFB1727FEC5D800E6079A /* Shivanshu_PhotoViewController.swift */,
+				E73034E02803B3DE00B02C70 /* Karn_SeatsSeclectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				E7FDE18027EEDEB800F8C78A /* MovieDetailViewController.swift in Sources */,
 				92FED52C27F2652600E6ECF7 /* BookingViewController.swift in Sources */,
 				10D036E027D029BE0067720F /* SceneDelegate.swift in Sources */,
+				E73034E12803B3DE00B02C70 /* Karn_SeatsSeclectionViewController.swift in Sources */,
 				9231607527F269EF0051668D /* TicketBook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

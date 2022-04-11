@@ -11,7 +11,10 @@ class BookingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     
     var selection: String!
-
+    var seatsLabel: String!
+    var updateSeat: String!
+    
+    
     @IBOutlet var slQuantity : UISlider!
     @IBOutlet var lbQuantity : UILabel!
     @IBOutlet var lbdatetime : UILabel!
@@ -21,9 +24,71 @@ class BookingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet var lbtickettype : UILabel!
     @IBOutlet var lbseats : UILabel!
     @IBOutlet var lbmovie : UILabel!
-        
     
-
+    @IBOutlet var viewReciept: UIButton!
+    
+    
+    
+    
+    @IBAction func SaveReciept(sender: UIButton)
+    {
+        let fileName = "paymentReciept"
+        let DocumentURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let fileURL = DocumentURL.appendingPathComponent(fileName).appendingPathExtension("txt")
+        
+        print("File Path: \(fileURL.path)")
+        let quantity: Int? = Int(lbQuantity.text!)
+        let priceRegular = 14
+        let priceiMax = 20
+        
+        if lbtickettype.text == "Regular"
+        {
+           let txt = """
+                    Movie Name: \(lbmovie.text!)
+                    Seats: \(lbseats.text!)
+                    Date & Time: \(lbdatetime.text!)
+                    Ticket Type: \(lbtickettype.text!)
+                    Theater: \(lbTheatre.text!)
+                    Quantity: \(lbQuantity.text!)
+                    Price: $\(quantity! * priceRegular)
+                """
+            
+            do {
+                try txt.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+            } catch let error as NSError {
+                print("Failed to write to file")
+                print(error)
+            }
+        }
+        
+        if lbtickettype.text == "iMax"
+        {
+           let txt = """
+                    Movie Name: \(lbmovie.text!)
+                    Seats: \(lbseats.text!)
+                    Date & Time: \(lbdatetime.text!)
+                    Ticket Type: \(lbtickettype.text!)
+                    Theater: \(lbTheatre.text!)
+                    Quantity: \(lbQuantity.text!)
+                    Price: $\(quantity! * priceiMax)
+                """
+            
+            do {
+                try txt.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+            } catch let error as NSError {
+                print("Failed to write to file")
+                print(error)
+            }
+        }
+        
+        
+        
+        
+                   
+                    
+    }
+    
+    
     
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -121,12 +186,31 @@ class BookingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     
+
     
+    @IBAction func saveMovieName(sender: UIButton) {
+            let defaults = UserDefaults.standard
+            defaults.set(lbmovie.text, forKey: "movieName")
+            defaults.synchronize()
+    }
+    
+    @IBAction func removeMovieName(sender: UIButton){
+        UserDefaults.standard.removeObject(forKey: "movieName")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         lbmovie.text = selection
+        lbseats.text = seatsLabel
+        
+        
+        let defaults = UserDefaults.standard
+        
+        if let movieName = defaults.object(forKey: "movieName") as? String
+        {
+           lbmovie.text = movieName
+        }
         
         updateQuantityLabel()
 
