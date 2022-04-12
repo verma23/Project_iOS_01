@@ -9,7 +9,7 @@ import UIKit
 
 
 
-class LoginViewController: UIViewController,UITextFieldDelegate {
+class Shivanshu_LoginViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet var userEmail: UITextField!
     
@@ -33,7 +33,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let dest = segue.destination as?  ViewController{
+        if let dest = segue.destination as?  Karn_MoviesListViewController{
             dest.emailbl = userEmail.text
            
             

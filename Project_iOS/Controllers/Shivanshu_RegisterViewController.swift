@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController, UITextFieldDelegate {
+class Shivanshu_RegisterViewController: UIViewController, UITextFieldDelegate {
    
     @IBOutlet  var tFname: UITextField!
     

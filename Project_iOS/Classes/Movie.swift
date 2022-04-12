@@ -2,18 +2,19 @@
 //  Movie.swift
 //  Project_iOS
 //
-//  Created by  on 2022-03-26.
-//
+//  Created by Karn Bhavsar  on 2022-03-26.
+//  This class is for Movie Collection list  and Movie Details
 
 import UIKit
 
 struct Movie {
-    let title: String
-    let image: UIImage
-    let summary: String
-    let trailer: String
+    let title: String // To store the movie title
+    let image: UIImage // TO store the movie image
+    let summary: String // To store the movie summary
+    let trailer: String // To store the youtube id for the movie trailer
 }
 
+// An array to hold all the movie details
 let movies: [Movie] = [
     Movie(title: "Captain America: The First Avenger", image: UIImage(imageLiteralResourceName: "movie1"), summary: "Steve Rogers, a rejected military soldier, transforms into Captain America after taking a dose of a Super-Soldier serum. But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.", trailer: "W4DlMggBPvc"),
     Movie(title: "Captain Marvel", image: UIImage(imageLiteralResourceName: "movie2"), summary: "Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.", trailer: "Z1BCujX3pw8"),

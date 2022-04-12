@@ -2,45 +2,42 @@
 //  HelpViewController.swift
 //  Project_iOS
 //
-//  Created by  on 2022-03-28.
-//
+//  Created by Anee Patel  on 2022-03-28.
+// This view controller is for displaying the help FAQs
+// It also has the search functionality
 
 import UIKit
 
-class HelpViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class Anee_HelpViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
-    @IBOutlet var table : UITableView!
-    @IBOutlet var tf : UITextField!
+    @IBOutlet var table : UITableView! // Defining the tableview
+    @IBOutlet var tf : UITextField! // Defining the search textfield
     
+      
+    var isfiltered = false // Declaring a variable for whether the questions are filtered or not
     
-   
-    // step 5 - declare array for data
-   
-    var isfiltered = false
-    
-    var Data = [String]()
-    var Answer = [String]()
-    var filteredData = [String]()
-    var filteredAnswer = [String]()
+    var Data = [String]() // Declaring dictionary for storing the questions
+    var Answer = [String]() // Declaring dictionary for storing the answers
+    var filteredData = [String]() // Declaring dictionary for storing the filtered questions
+    var filteredAnswer = [String]() // Declaring dictionary for storing the filtered answers
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tf.delegate = self
         setupData()
-        // step 5b - define array (could be done above too)
-       // listData = ["Jays", "Leafs", "Raptors", "Marlies", "FC"]
-        // Do any additional setup after loading the view.
+        
        
        
         
     }
     
+    // Segue from Help detail view controller to Help view controller
     @IBAction func unwindToHelpViewController(sender : UIStoryboardSegue)
     {
         
     }
     
-    
+    // A fuction for implementing the search functionality
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         if let text = textField.text{
@@ -49,6 +46,7 @@ class HelpViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return true
     }
     
+    // A function for filtering the questions and answers
     func filterText(_ query : String){
         //print("\(query)")
         
@@ -75,6 +73,7 @@ class HelpViewController: UIViewController, UITableViewDataSource, UITableViewDe
         isfiltered = true
     }
     
+    // A function for populating the dictionary for questions and answers
     func setupData(){
         Data.append("How do I register in Movieplex?")
         
@@ -101,9 +100,9 @@ class HelpViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         Answer.append("How do I see my account information? \n\n 1. From the navigation buttons at the bottom, Click on 'Account' icon")
         
-        Answer.append("How do I select my seats? \n\n 1. From the navigation buttons at the bottom, Click on 'Movies' icon \n 2. Select the movie (You will be navigated to the Movie details page) \n 3. Click on the 'Choose Seats' button \n 4. Select the seats (Select again if you want to unselect) \n 5. Click on back button to go back to the booking page")
+        Answer.append("How do I select my seats? \n\n 1. From the navigation buttons at the bottom, Click on 'Movies' icon \n 2. Select the movie (You will be navigated to the Movie details page) \n 3. Click on the 'Choose Seats' button \n 4. Select the seats (Double click to select and Select again if you want to unselect)\n 5. Click on 'Confirm Seats' button \n 6. Click on back button to go back to the booking page \n Note: Click on 'Update Seats' button when you choose the seats again")
         
-        Answer.append("How do I view my receipt? \n\n 1. After booking the ticket, Click on 'View Receipt' to view your receipt")
+        Answer.append("How do I view my receipt? \n\n 1. After booking the ticket, Click on 'View Receipt' to view your receipt \n 2. Open the terminal and cd to simulator's document directory to view the receipt data")
         
     }
 
@@ -115,7 +114,7 @@ class HelpViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     // MARK: - Table Methods
     
-    // step 6 - define Table Delegate method for number of cells to instantiate
+    //defining Table Delegate method for number of cells to instantiate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
        
@@ -126,12 +125,12 @@ class HelpViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return Data.count
     }
 
-    // step 7 - define Table Delegate method for height for each cell
+    // defining Table Delegate method for height for each cell
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
 
-    // step 8 - define how each cell should look and its data
+    // defining how each cell should look and its data
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableCell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell()
         
@@ -159,31 +158,30 @@ class HelpViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
-    // step 9 making cells editable
+    //making cells editable
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
+    // An event handler - when the cell is selected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let rowNum = indexPath.row
         
         let mainDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        // step 13d - save url
+        
         if !filteredData.isEmpty{
-           // mainDelegate.selectedQuestion = filteredData[rowNum]
+           
             mainDelegate.selectedAnswer = filteredAnswer[rowNum]
         }
         else
         {
-           // mainDelegate.selectedQuestion = Data[rowNum]
+          
             mainDelegate.selectedAnswer = Answer[rowNum]
         }
         
         
-        // step 13e - move to ViewSiteViewController screen
-        // first define "ChooseSegueToView" in SB
-        // move on to ViewSiteViewController.swift
+       // Segue to help detail view controller
         performSegue(withIdentifier: "ChooseSegueToView", sender: nil)
     }
 

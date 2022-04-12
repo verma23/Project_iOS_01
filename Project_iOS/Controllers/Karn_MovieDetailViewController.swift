@@ -2,21 +2,21 @@
 //  MovieDetailViewController.swift
 //  Project_iOS
 //
-//  Created by  on 2022-03-26.
-//
+//  Created by Karn Bhavsar on 2022-03-26.
+// View controller to display movie details
 
 import UIKit
 import youtube_ios_player_helper
 
-class MovieDetailViewController: UIViewController,YTPlayerViewDelegate {
+class Karn_MovieDetailViewController: UIViewController,YTPlayerViewDelegate {
     
-    var selection: String!
-    var selection1: String!
-    var selection3: String!
+    var selection: String! // string variable for movie name
+    var selection1: String! // string variable for movie summary
+    var selection3: String! // string variable for trailer id
     
-    @IBOutlet private weak var MovieLabel: UILabel!
-    @IBOutlet private weak var MovieSummary: UILabel!
-    @IBOutlet var playerView: YTPlayerView!
+    @IBOutlet private weak var MovieLabel: UILabel! // Defining a label for movie  name
+    @IBOutlet private weak var MovieSummary: UILabel! // Defining a label for movie  summary
+    @IBOutlet var playerView: YTPlayerView! // Defining player view for movie trailer
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,17 +29,21 @@ class MovieDetailViewController: UIViewController,YTPlayerViewDelegate {
         
     }
     
+    // A fuction to play the trailer upon loading the page
     func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
         playerView.playVideo()
     }
     
+    // Anee Patel - Segue to booking view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let dest = segue.destination as? BookingViewController {
+        // Passing the movie name to booking view controlelr
+        if let dest = segue.destination as? Anee_BookingViewController {
             dest.selection = MovieLabel.text
            
             
         }
     }
+    // Anee Patel - Segue from booking view controller to movie details view controller
     @IBAction func unwindToDetailViewController(sender : UIStoryboardSegue)
     {
         

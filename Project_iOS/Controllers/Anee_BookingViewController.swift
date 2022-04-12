@@ -2,34 +2,34 @@
 //  BookingViewController.swift
 //  Project_iOS
 //
-//  Created by  on 2022-03-25.
-//
+//  Created by Anee Patel on 2022-03-25.
+// This is the view controller for booking the tickets
 
 import UIKit
 
-class BookingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+class Anee_BookingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
     
-    var selection: String!
-    var seatsLabel: String!
-    var updateSeat: String!
+    var selection: String! // String variable for movie name
+    var seatsLabel: String! // Karn Bhavsar - String variable for seats
+    var updateSeat: String! // Karn Bhavsar - String variable for updated seats
     
     
-    @IBOutlet var slQuantity : UISlider!
-    @IBOutlet var lbQuantity : UILabel!
-    @IBOutlet var lbdatetime : UILabel!
-    @IBOutlet var dpdatetime : UIDatePicker!
-    @IBOutlet var lbTheatre : UILabel!
-    @IBOutlet var sgtickettype : UISegmentedControl!
-    @IBOutlet var lbtickettype : UILabel!
-    @IBOutlet var lbseats : UILabel!
-    @IBOutlet var lbmovie : UILabel!
+    @IBOutlet var slQuantity : UISlider! // Slider for tickets quantity
+    @IBOutlet var lbQuantity : UILabel! // Label to store the slider value of quantity
+    @IBOutlet var lbdatetime : UILabel! // Label to store the date picker value
+    @IBOutlet var dpdatetime : UIDatePicker! // Date picker for movie show date and time
+    @IBOutlet var lbTheatre : UILabel! // Label to store the picker view value of theatre
+    @IBOutlet var sgtickettype : UISegmentedControl! // Segmented control for ticket type
+    @IBOutlet var lbtickettype : UILabel! // Label for storing the segmented control value
+    @IBOutlet var lbseats : UILabel! // Karn Bhavsar - Label to store selected seats
+    @IBOutlet var lbmovie : UILabel! // Label to store movie name
     
-    @IBOutlet var viewReciept: UIButton!
-    
-    
+    @IBOutlet var viewReciept: UIButton! // Button to view your reciept
     
     
+    
+    // A function to save receipt to a text file
     @IBAction func SaveReciept(sender: UIButton)
     {
         let fileName = "paymentReciept"
@@ -41,6 +41,7 @@ class BookingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let priceRegular = 14
         let priceiMax = 20
         
+        // If the ticket type is regular
         if lbtickettype.text == "Regular"
         {
            let txt = """
@@ -60,7 +61,7 @@ class BookingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
                 print(error)
             }
         }
-        
+        // If the ticket type is Imax
         if lbtickettype.text == "iMax"
         {
            let txt = """
@@ -92,39 +93,37 @@ class BookingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    // A function to display all the theatres in the picker view
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return mainDelegate.theatres.count
     }
     
+    // A fucntion to return number of components
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
+    // A function to return the title - theatre name
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        //return mainDelegate.people[row].name
+        
         return mainDelegate.theatres[row]
     }
     
+    // An event handler - updates the label with the new theatre name
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        let alertcontroller = UIAlertController(title: mainDelegate.people[row].email, message: mainDelegate.people[row].food, preferredStyle: .alert)
-//
-//        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//
-//        alertcontroller.addAction(cancelAction)
-//        present(alertcontroller, animated: true)
-        
-        //lbcheck.text = mainDelegate.people[row].name
         
         lbTheatre.text = mainDelegate.theatres[row]
         
     }
     
+    // An event handler - Updates the quantity label
     @IBAction func sliderValueChanged(sender : UISlider)
     {
         updateQuantityLabel()
         
     }
     
+    // A function to update the quantity label
     func updateQuantityLabel(){
         let quantity = slQuantity.value;
         let strQuantity = String(format: "%.f", quantity)
@@ -132,21 +131,25 @@ class BookingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
        
     }
     
+    // A function to update the date and time label
     func updateDate(){
        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd h:mm a"
         lbdatetime.text = dateFormatter.string(from: dpdatetime.date)
     }
     
+    // An event handler - when the date picker value is changed
     @IBAction func datePickerValueChanged(sender:UIDatePicker){
         updateDate()
     }
     
+    // An event handler - when the segmented control value is changed
     @IBAction func segmentDidChange(_ sender : Any)
     {
         updateTicketType()
     }
     
+    // A function to update the label of ticket type
     func updateTicketType()
     {
         let tickettype = sgtickettype.selectedSegmentIndex;
@@ -163,6 +166,7 @@ class BookingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     }
     
+    // An event handler - add tickets to the database
     @IBAction func addTickets(sender:Any){
         
         let ticket : TicketBook = TicketBook.init()
@@ -185,15 +189,14 @@ class BookingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         present(alertcntroller, animated: true)
     }
     
-    
-
-    
+    // Karn Bhavsar - An event handler - for storing the user defaults for movie name
     @IBAction func saveMovieName(sender: UIButton) {
             let defaults = UserDefaults.standard
             defaults.set(lbmovie.text, forKey: "movieName")
             defaults.synchronize()
     }
     
+    // Karn Bhavsar - An event handler - removing movie name user defaults when Movie button is clicked from nav bar
     @IBAction func removeMovieName(sender: UIButton){
         UserDefaults.standard.removeObject(forKey: "movieName")
     }

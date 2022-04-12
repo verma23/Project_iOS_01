@@ -10,12 +10,12 @@
 		0E72C6B741AFC232D9FADFF4 /* Pods_Project_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702DD3F709E08772D0AD36A2 /* Pods_Project_iOS.framework */; };
 		10D036DE27D029BE0067720F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D036DD27D029BE0067720F /* AppDelegate.swift */; };
 		10D036E027D029BE0067720F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D036DF27D029BE0067720F /* SceneDelegate.swift */; };
-		10D036E227D029BE0067720F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D036E127D029BE0067720F /* ViewController.swift */; };
+		10D036E227D029BE0067720F /* Karn_MoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D036E127D029BE0067720F /* Karn_MoviesListViewController.swift */; };
 		10D036E527D029BE0067720F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10D036E327D029BE0067720F /* Main.storyboard */; };
 		10D036E727D029BF0067720F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D036E627D029BF0067720F /* Assets.xcassets */; };
 		10D036EA27D029BF0067720F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10D036E827D029BF0067720F /* LaunchScreen.storyboard */; };
-		10D037DE27DC13DE0067720F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D037DD27DC13DE0067720F /* LoginViewController.swift */; };
-		10D037E027DC13EC0067720F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D037DF27DC13EC0067720F /* RegisterViewController.swift */; };
+		10D037DE27DC13DE0067720F /* Shivanshu_LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D037DD27DC13DE0067720F /* Shivanshu_LoginViewController.swift */; };
+		10D037E027DC13EC0067720F /* Shivanshu_RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D037DF27DC13EC0067720F /* Shivanshu_RegisterViewController.swift */; };
 		10D037EC27DC1C850067720F /* bg_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10D037EB27DC1C850067720F /* bg_main.jpg */; };
 		10D037F227DC28F70067720F /* projDatabase.db in Resources */ = {isa = PBXBuildFile; fileRef = 10D037F127DC28F60067720F /* projDatabase.db */; };
 		10D037F627DCEC2A0067720F /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 10D037F427DCEC1F0067720F /* libsqlite3.0.tbd */; };
@@ -25,16 +25,16 @@
 		9216110B27F2A186001FD1D6 /* IOSProject.db in Resources */ = {isa = PBXBuildFile; fileRef = 9216110A27F2A186001FD1D6 /* IOSProject.db */; };
 		9216110E27F2A45A001FD1D6 /* bookticket.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9216110C27F2A45A001FD1D6 /* bookticket.jpg */; };
 		9216110F27F2A45A001FD1D6 /* bookmyshow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9216110D27F2A45A001FD1D6 /* bookmyshow.jpg */; };
-		9216111127F2ACF9001FD1D6 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216111027F2ACF9001FD1D6 /* HelpViewController.swift */; };
+		9216111127F2ACF9001FD1D6 /* Anee_HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216111027F2ACF9001FD1D6 /* Anee_HelpViewController.swift */; };
 		9231607527F269EF0051668D /* TicketBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9231607427F269EF0051668D /* TicketBook.swift */; };
-		9278D03F27F3A8030025708C /* HelpDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9278D03E27F3A8030025708C /* HelpDetailViewController.swift */; };
+		9278D03F27F3A8030025708C /* Anee_HelpDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9278D03E27F3A8030025708C /* Anee_HelpDetailViewController.swift */; };
 		9278D07027F3CE9D0025708C /* back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9278D06F27F3CE9D0025708C /* back.jpg */; };
-		92FED52C27F2652600E6ECF7 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FED52B27F2652600E6ECF7 /* BookingViewController.swift */; };
+		92FED52C27F2652600E6ECF7 /* Anee_BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FED52B27F2652600E6ECF7 /* Anee_BookingViewController.swift */; };
 		AFAB4A0DF2E271EFECB19FD7 /* Pods_Project_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA51A1E3A2C7FFEC6B40DA85 /* Pods_Project_iOSTests.framework */; };
 		E73034E12803B3DE00B02C70 /* Karn_SeatsSeclectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73034E02803B3DE00B02C70 /* Karn_SeatsSeclectionViewController.swift */; };
 		E7FDE17C27EEC27600F8C78A /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDE17B27EEC27600F8C78A /* MovieCollectionViewCell.swift */; };
 		E7FDE17E27EECE2800F8C78A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDE17D27EECE2800F8C78A /* Movie.swift */; };
-		E7FDE18027EEDEB800F8C78A /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDE17F27EEDEB800F8C78A /* MovieDetailViewController.swift */; };
+		E7FDE18027EEDEB800F8C78A /* Karn_MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDE17F27EEDEB800F8C78A /* Karn_MovieDetailViewController.swift */; };
 		EA7AFB1627FEAD1500E6079A /* Shivanshu_AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7AFB1527FEAD1500E6079A /* Shivanshu_AccountViewController.swift */; };
 		EA7AFB1827FEC5D800E6079A /* Shivanshu_PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7AFB1727FEC5D800E6079A /* Shivanshu_PhotoViewController.swift */; };
 		EA7AFB1A27FEC6E700E6079A /* imageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7AFB1927FEC6E700E6079A /* imageData.swift */; };
@@ -65,15 +65,15 @@
 		10D036DA27D029BE0067720F /* Project_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D036DD27D029BE0067720F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10D036DF27D029BE0067720F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		10D036E127D029BE0067720F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		10D036E127D029BE0067720F /* Karn_MoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Karn_MoviesListViewController.swift; sourceTree = "<group>"; };
 		10D036E427D029BE0067720F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10D036E627D029BF0067720F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10D036E927D029BF0067720F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10D036EB27D029BF0067720F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10D036F027D029BF0067720F /* Project_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Project_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D036FA27D029BF0067720F /* Project_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Project_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		10D037DD27DC13DE0067720F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		10D037DF27DC13EC0067720F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		10D037DD27DC13DE0067720F /* Shivanshu_LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shivanshu_LoginViewController.swift; sourceTree = "<group>"; };
+		10D037DF27DC13EC0067720F /* Shivanshu_RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shivanshu_RegisterViewController.swift; sourceTree = "<group>"; };
 		10D037EB27DC1C850067720F /* bg_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_main.jpg; sourceTree = "<group>"; };
 		10D037F127DC28F60067720F /* projDatabase.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = projDatabase.db; sourceTree = "<group>"; };
 		10D037F427DCEC1F0067720F /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
@@ -85,11 +85,11 @@
 		9216110A27F2A186001FD1D6 /* IOSProject.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = IOSProject.db; sourceTree = "<group>"; };
 		9216110C27F2A45A001FD1D6 /* bookticket.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bookticket.jpg; sourceTree = "<group>"; };
 		9216110D27F2A45A001FD1D6 /* bookmyshow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bookmyshow.jpg; sourceTree = "<group>"; };
-		9216111027F2ACF9001FD1D6 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		9216111027F2ACF9001FD1D6 /* Anee_HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anee_HelpViewController.swift; sourceTree = "<group>"; };
 		9231607427F269EF0051668D /* TicketBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketBook.swift; sourceTree = "<group>"; };
-		9278D03E27F3A8030025708C /* HelpDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDetailViewController.swift; sourceTree = "<group>"; };
+		9278D03E27F3A8030025708C /* Anee_HelpDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anee_HelpDetailViewController.swift; sourceTree = "<group>"; };
 		9278D06F27F3CE9D0025708C /* back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back.jpg; sourceTree = "<group>"; };
-		92FED52B27F2652600E6ECF7 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
+		92FED52B27F2652600E6ECF7 /* Anee_BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anee_BookingViewController.swift; sourceTree = "<group>"; };
 		99C942D45A15A864F53E6CC6 /* Pods-Project_iOS-Project_iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_iOS-Project_iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Project_iOS-Project_iOSUITests/Pods-Project_iOS-Project_iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB7E01B776C2D6A341C67A34 /* Pods-Project_iOS-Project_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_iOS-Project_iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Project_iOS-Project_iOSUITests/Pods-Project_iOS-Project_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CE4FDC07F7C2498E9151CAB7 /* Pods-Project_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Project_iOSTests/Pods-Project_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 		E73034E02803B3DE00B02C70 /* Karn_SeatsSeclectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Karn_SeatsSeclectionViewController.swift; sourceTree = "<group>"; };
 		E7FDE17B27EEC27600F8C78A /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		E7FDE17D27EECE2800F8C78A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		E7FDE17F27EEDEB800F8C78A /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		E7FDE17F27EEDEB800F8C78A /* Karn_MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Karn_MovieDetailViewController.swift; sourceTree = "<group>"; };
 		EA7AFB1527FEAD1500E6079A /* Shivanshu_AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shivanshu_AccountViewController.swift; sourceTree = "<group>"; };
 		EA7AFB1727FEC5D800E6079A /* Shivanshu_PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shivanshu_PhotoViewController.swift; sourceTree = "<group>"; };
 		EA7AFB1927FEC6E700E6079A /* imageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageData.swift; sourceTree = "<group>"; };
@@ -193,6 +193,7 @@
 		10D037D927DC138F0067720F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E7FDE17B27EEC27600F8C78A /* MovieCollectionViewCell.swift */,
 				10D036DF27D029BE0067720F /* SceneDelegate.swift */,
 				10D036DD27D029BE0067720F /* AppDelegate.swift */,
 				10D037F827DCED1B0067720F /* Shivanshu_Data.swift */,
@@ -214,14 +215,13 @@
 		10D037DB27DC139F0067720F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				10D036E127D029BE0067720F /* ViewController.swift */,
-				10D037DD27DC13DE0067720F /* LoginViewController.swift */,
-				10D037DF27DC13EC0067720F /* RegisterViewController.swift */,
-				E7FDE17B27EEC27600F8C78A /* MovieCollectionViewCell.swift */,
-				E7FDE17F27EEDEB800F8C78A /* MovieDetailViewController.swift */,
-				92FED52B27F2652600E6ECF7 /* BookingViewController.swift */,
-				9216111027F2ACF9001FD1D6 /* HelpViewController.swift */,
-				9278D03E27F3A8030025708C /* HelpDetailViewController.swift */,
+				10D036E127D029BE0067720F /* Karn_MoviesListViewController.swift */,
+				10D037DD27DC13DE0067720F /* Shivanshu_LoginViewController.swift */,
+				10D037DF27DC13EC0067720F /* Shivanshu_RegisterViewController.swift */,
+				E7FDE17F27EEDEB800F8C78A /* Karn_MovieDetailViewController.swift */,
+				92FED52B27F2652600E6ECF7 /* Anee_BookingViewController.swift */,
+				9216111027F2ACF9001FD1D6 /* Anee_HelpViewController.swift */,
+				9278D03E27F3A8030025708C /* Anee_HelpDetailViewController.swift */,
 				EA7AFB1527FEAD1500E6079A /* Shivanshu_AccountViewController.swift */,
 				EA7AFB1727FEC5D800E6079A /* Shivanshu_PhotoViewController.swift */,
 				E73034E02803B3DE00B02C70 /* Karn_SeatsSeclectionViewController.swift */,
@@ -517,20 +517,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10D037DE27DC13DE0067720F /* LoginViewController.swift in Sources */,
+				10D037DE27DC13DE0067720F /* Shivanshu_LoginViewController.swift in Sources */,
 				EA7AFB1827FEC5D800E6079A /* Shivanshu_PhotoViewController.swift in Sources */,
 				10D037F927DCED1C0067720F /* Shivanshu_Data.swift in Sources */,
-				10D037E027DC13EC0067720F /* RegisterViewController.swift in Sources */,
-				10D036E227D029BE0067720F /* ViewController.swift in Sources */,
+				10D037E027DC13EC0067720F /* Shivanshu_RegisterViewController.swift in Sources */,
+				10D036E227D029BE0067720F /* Karn_MoviesListViewController.swift in Sources */,
 				E7FDE17C27EEC27600F8C78A /* MovieCollectionViewCell.swift in Sources */,
 				10D036DE27D029BE0067720F /* AppDelegate.swift in Sources */,
 				EA7AFB1A27FEC6E700E6079A /* imageData.swift in Sources */,
 				EA7AFB1627FEAD1500E6079A /* Shivanshu_AccountViewController.swift in Sources */,
-				9278D03F27F3A8030025708C /* HelpDetailViewController.swift in Sources */,
+				9278D03F27F3A8030025708C /* Anee_HelpDetailViewController.swift in Sources */,
 				E7FDE17E27EECE2800F8C78A /* Movie.swift in Sources */,
-				9216111127F2ACF9001FD1D6 /* HelpViewController.swift in Sources */,
-				E7FDE18027EEDEB800F8C78A /* MovieDetailViewController.swift in Sources */,
-				92FED52C27F2652600E6ECF7 /* BookingViewController.swift in Sources */,
+				9216111127F2ACF9001FD1D6 /* Anee_HelpViewController.swift in Sources */,
+				E7FDE18027EEDEB800F8C78A /* Karn_MovieDetailViewController.swift in Sources */,
+				92FED52C27F2652600E6ECF7 /* Anee_BookingViewController.swift in Sources */,
 				10D036E027D029BE0067720F /* SceneDelegate.swift in Sources */,
 				E73034E12803B3DE00B02C70 /* Karn_SeatsSeclectionViewController.swift in Sources */,
 				9231607527F269EF0051668D /* TicketBook.swift in Sources */,

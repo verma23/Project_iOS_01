@@ -3,13 +3,13 @@
 //  Project_iOS
 //
 //  Created by Shivanshu Verma on 2022-03-12.
-//
+// This class is for login and register fields
 
 import UIKit
 
 class Shivanshu_Data: NSObject {
-    var id : Int?
-    var Fname: String?
+    var id : Int? // Unique id for a registered and login user
+    var Fname: String? 
     var Lname: String?
     var EmailAddress: String?
     var PhoneNumber: String?

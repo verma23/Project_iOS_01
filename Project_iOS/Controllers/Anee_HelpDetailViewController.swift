@@ -2,15 +2,15 @@
 //  HelpDetailViewController.swift
 //  Project_iOS
 //
-//  Created by  on 2022-03-29.
-//
+//  Created by Anee Patel  on 2022-03-29.
+// this is the view controller to display the answer to the question selected in the help view controller
 
 import UIKit
 
-class HelpDetailViewController: UIViewController {
+class Anee_HelpDetailViewController: UIViewController {
     
-    @IBOutlet var questionLabel : UILabel!
-    @IBOutlet var answerLabel : UILabel!
+    @IBOutlet var questionLabel : UILabel! // Label for the question
+    @IBOutlet var answerLabel : UILabel! // Label for the answer
     
 
     override func viewDidLoad() {

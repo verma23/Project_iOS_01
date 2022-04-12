@@ -2,7 +2,8 @@
 //  TicketBook.swift
 //  Project_iOS
 //
-//  Created by  on 2022-03-28.
+//  Created by Anee Patel  on 2022-03-28.
+// This class has all the fields for booking the tickets
 //
 
 import UIKit
@@ -10,14 +11,15 @@ import UIKit
 class TicketBook: NSObject {
 
    
-        var id : Int?
-        var moviename : String?
-        var seats : String?
-        var dateTime: String?
-        var ticketType: String?
-        var theatre: String?
-        var quantity: String?
+        var id : Int? // Unique id of the ticket
+        var moviename : String? // Movie name selected by the user
+        var seats : String? // Seats selected by the user
+        var dateTime: String? // Date and Time selected by the user
+        var ticketType: String? // Ticket type selected by the user
+        var theatre: String? // Theatre selected by the user
+        var quantity: String? // Quantity selected by the user
          
+    // A constructor initwithdata for ticketbook class
     func initWithData(theRow i :Int, theMoviename m: String, theSeats s: String, theDateTume dt: String , theTicketType tt: String, theTheatre t: String, theQuantity q : String){
         id = i
         moviename = m

@@ -2,17 +2,18 @@
 //  Karn_SeatsSeclectionViewController.swift
 //  Project_iOS
 //
-//  Created by  on 2022-04-10.
-//
+//  Created by Karn Bhavsar  on 2022-04-10.
+// This is the view controller for selecting the seats
 
 import UIKit
 
 class Karn_SeatsSeclectionViewController: UIViewController {
 
-    var seatsLabel: String!
-    var movieLabel: String!
+    var seatsLabel: String! // String variable for seats label
     
     
+    // Variable for checking the seats if they are selected or not
+    // Assigning the value as false - making the default state of seats as unselected seats
     var isActiveA1:Bool = false
     var isActiveA2:Bool = false
     var isActiveA3:Bool = false
@@ -34,6 +35,7 @@ class Karn_SeatsSeclectionViewController: UIViewController {
     var isActiveD4:Bool = false
     var isActiveD5:Bool = false
     
+    // Declaring the buttonts for each seats
     @IBOutlet weak var A1: UIButton!
     @IBOutlet weak var A2: UIButton!
     @IBOutlet weak var A3: UIButton!
@@ -54,8 +56,10 @@ class Karn_SeatsSeclectionViewController: UIViewController {
     @IBOutlet weak var D3: UIButton!
     @IBOutlet weak var D4: UIButton!
     @IBOutlet weak var D5: UIButton!
+    // Declaring a button for updating the seats
     @IBOutlet weak var update: UIButton!
     
+    // Declaring the labels for all the seats
     @IBOutlet weak var seatsA1: UILabel!
     @IBOutlet weak var seatsA2: UILabel!
     @IBOutlet weak var seatsA3: UILabel!
@@ -78,9 +82,10 @@ class Karn_SeatsSeclectionViewController: UIViewController {
     @IBOutlet weak var seatsD5: UILabel!
     
     
-    @IBOutlet weak var seatsAppend: UILabel!
-    @IBOutlet weak var updatedSeats: UILabel!
+    @IBOutlet weak var seatsAppend: UILabel! // Label to store all the selected seats
+    @IBOutlet weak var updatedSeats: UILabel! // Label to store all the updated seats
     
+    // An event handler to update the seats label with the selected seats
     @IBAction func allSeats(sender: UIButton) {
         seatsAppend.text = "\(seatsA1.text!) \(seatsA2.text!) \(seatsA3.text!) \(seatsA4.text!) \(seatsA5.text!)" +
                            "\(seatsB1.text!) \(seatsB2.text!) \(seatsB3.text!) \(seatsB4.text!) \(seatsB5.text!)" +
@@ -93,6 +98,7 @@ class Karn_SeatsSeclectionViewController: UIViewController {
         defaults.synchronize()
     }
     
+    // An event handler when the user choose the seats again
     @IBAction func updateSeats(sender: UIButton) {
         
         seatsAppend.text = "\(seatsAppend.text!) \(seatsA1.text!) \(seatsA2.text!) \(seatsA3.text!) \(seatsA4.text!) \(seatsA5.text!)" +
@@ -108,19 +114,16 @@ class Karn_SeatsSeclectionViewController: UIViewController {
         
     }
     
-   
+   // Segue from seats view controller to booking view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let dest = segue.destination as? BookingViewController {
+        // Passing the seats label to the booking view controller
+        if let dest = segue.destination as? Anee_BookingViewController {
             dest.seatsLabel = seatsAppend.text
             
-            
-            
-
-
-
         }
     }
     
+    // An event handler to change the appearance of the seats button upon selection
     @IBAction func changeStateA1(_ sender: UIButton) {
         if isActiveA1 {
             isActiveA1 = false
@@ -443,11 +446,12 @@ class Karn_SeatsSeclectionViewController: UIViewController {
     }
     
    
-    
+    // A function to show seat "A1" selected in the seats label
     func selectedA1() {
         seatsA1.text = "A1  \(seatsA1.text!)"
     }
     
+    // A function to show seat "A1" unselected in seats label
     func unSelectedA1() {
         seatsA1.text = ""
     }
