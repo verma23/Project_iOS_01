@@ -32,6 +32,7 @@ class Anee_BookingViewController: UIViewController, UIPickerViewDelegate, UIPick
     // A function to save receipt to a text file
     @IBAction func SaveReciept(sender: UIButton)
     {
+        
         let fileName = "paymentReciept"
         let DocumentURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         let fileURL = DocumentURL.appendingPathComponent(fileName).appendingPathExtension("txt")
@@ -56,6 +57,12 @@ class Anee_BookingViewController: UIViewController, UIPickerViewDelegate, UIPick
             
             do {
                 try txt.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+                
+                var alertbox = UIAlertController(title: "Receipt", message: "To view saved receipt, Open terminal and cd to the simulator's document directory path that is printed in console and then execute open paymentReceipt \n\n \(txt)", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                alertbox.addAction(okAction)
+                present(alertbox, animated: true)
+                
             } catch let error as NSError {
                 print("Failed to write to file")
                 print(error)
@@ -76,6 +83,12 @@ class Anee_BookingViewController: UIViewController, UIPickerViewDelegate, UIPick
             
             do {
                 try txt.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+                
+                var alertbox = UIAlertController(title: "Receipt", message: "To view saved receipt, Open terminal and cd to the simulator's document directory path that is printed in console and then execute open paymentReceipt \n\n \(txt)", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                alertbox.addAction(okAction)
+                present(alertbox, animated: true)
+                
             } catch let error as NSError {
                 print("Failed to write to file")
                 print(error)
@@ -86,7 +99,7 @@ class Anee_BookingViewController: UIViewController, UIPickerViewDelegate, UIPick
         
         
                    
-                    
+        
     }
     
     

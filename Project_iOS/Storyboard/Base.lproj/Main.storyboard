@@ -122,6 +122,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="help"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="W3R-j7-7Gi" kind="presentation" id="UzO-8P-hI9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyl-gS-Wc6">
                                 <rect key="frame" x="196" y="691" width="52" height="46"/>
@@ -314,6 +317,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="help"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="W3R-j7-7Gi" kind="presentation" id="fY0-w4-2Gv"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RG8-J9-ZJ0">
                                 <rect key="frame" x="323" y="742" width="69" height="21"/>
@@ -329,6 +335,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="register"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Ost-F9-Z9a" kind="presentation" id="NTG-kU-VRE"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcM-gr-dNg">
                                 <rect key="frame" x="190" y="742" width="69" height="21"/>
@@ -344,6 +353,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="login"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="XYV-SC-lGi" kind="presentation" id="O4I-J7-CqJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VE-Ub-36R">
                                 <rect key="frame" x="72" y="733" width="45" height="38"/>
@@ -359,6 +371,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="movie"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="7He-xD-2ue"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOp-Oz-X1X">
                                 <rect key="frame" x="11" y="725" width="58" height="55"/>
@@ -374,6 +389,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="account"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="HBl-Ks-om3" kind="presentation" id="L1l-Up-GRo"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmL-ji-cZf">
                                 <rect key="frame" x="257" y="742" width="69" height="21"/>
@@ -1550,13 +1568,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Click on Update seats - Second TIme Booking" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vx4-6e-lj4">
-                                <rect key="frame" x="40" y="533" width="354" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selected Seats: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cb-LA-seW">
                                 <rect key="frame" x="3" y="599" width="146" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1568,6 +1579,13 @@
                                 <rect key="frame" x="160" y="584" width="220" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Click on Update seats - Second TIme Booking" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vx4-6e-lj4">
+                                <rect key="frame" x="33" y="529" width="354" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1678,10 +1696,10 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="MoviePlex" id="XHY-7u-4CX">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.backward.fill" catalog="system" id="iyD-Vz-aHB">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.backward.fill" catalog="system" id="8xh-U5-qjT">
                                             <color key="tintColor" systemColor="systemGreenColor"/>
                                             <connections>
-                                                <segue destination="XYV-SC-lGi" kind="presentation" id="pvt-lJ-5n8"/>
+                                                <segue destination="Tzl-JQ-kVF" kind="unwind" unwindAction="unwindToLoginViewControllerWithSender:" id="iDb-nr-MZf"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1744,6 +1762,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="register"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Ost-F9-Z9a" kind="presentation" id="OsG-NO-LeJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcY-lS-JyF">
                                 <rect key="frame" x="190" y="750" width="69" height="21"/>
@@ -1759,6 +1780,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="login"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="XYV-SC-lGi" kind="presentation" id="TB9-fD-GH8"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGY-kF-Pgn">
                                 <rect key="frame" x="72" y="741" width="45" height="38"/>
@@ -1808,8 +1832,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4b-l8-V4b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Tzl-JQ-kVF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4240" y="-162.08530805687204"/>
+            <point key="canvasLocation" x="4223" y="-154"/>
         </scene>
         <!--Anee Help Detail View Controller-->
         <scene sceneID="bZi-8j-eKe">
@@ -1901,6 +1926,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="help"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="W3R-j7-7Gi" kind="presentation" id="EkZ-rb-srn"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgl-jn-4iL">
                                 <rect key="frame" x="325" y="740" width="69" height="21"/>
@@ -1916,6 +1944,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="register"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Ost-F9-Z9a" kind="presentation" id="zsY-ry-KmV"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urb-8T-BwL">
                                 <rect key="frame" x="192" y="740" width="69" height="21"/>
@@ -1931,6 +1962,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="login"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="XYV-SC-lGi" kind="presentation" id="f0a-gX-tgu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Za-rg-9O9">
                                 <rect key="frame" x="74" y="731" width="45" height="38"/>
@@ -1987,7 +2021,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ndk-Ju-8lC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="V6N-xV-L8t" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4910.7692307692305" y="-162.08530805687204"/>
+            <point key="canvasLocation" x="4842" y="-154"/>
         </scene>
         <!--Shivanshu Account View Controller-->
         <scene sceneID="ArP-Qz-qaO">
@@ -2108,12 +2142,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0mP-38-c2G"/>
-        <segue reference="cw2-fj-YdO"/>
+        <segue reference="IIg-Vu-dx3"/>
+        <segue reference="EkZ-rb-srn"/>
         <segue reference="ZJA-gY-y6r"/>
-        <segue reference="kAe-RP-kWM"/>
-        <segue reference="Dsp-F7-0fV"/>
-        <segue reference="r2R-Ck-0gT"/>
+        <segue reference="f0a-gX-tgu"/>
+        <segue reference="zsY-ry-KmV"/>
+        <segue reference="7He-xD-2ue"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="account" width="256" height="256"/>
