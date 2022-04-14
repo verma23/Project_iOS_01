@@ -18,9 +18,11 @@ class TicketBook: NSObject {
         var ticketType: String? // Ticket type selected by the user
         var theatre: String? // Theatre selected by the user
         var quantity: String? // Quantity selected by the user
-         
+        var image: String?
+        var email: String?
+    
     // A constructor initwithdata for ticketbook class
-    func initWithData(theRow i :Int, theMoviename m: String, theSeats s: String, theDateTume dt: String , theTicketType tt: String, theTheatre t: String, theQuantity q : String){
+    func initWithData(theRow i :Int, theMoviename m: String, theSeats s: String, theDateTume dt: String , theTicketType tt: String, theTheatre t: String, theQuantity q : String, theImage im: String, theEmail e: String){
         id = i
         moviename = m
         seats = s
@@ -28,7 +30,8 @@ class TicketBook: NSObject {
         ticketType = tt
         theatre = t
         quantity = q
-            
+        image = im
+        email = e
         }
     
 }

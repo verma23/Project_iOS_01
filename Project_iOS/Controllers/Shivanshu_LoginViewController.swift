@@ -15,6 +15,8 @@ class Shivanshu_LoginViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet var userPass: UITextField!
     
+    var email : String = "" //Jashan Goyal
+    
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBAction func unwindToLoginViewController(sender : UIStoryboardSegue)
@@ -26,6 +28,11 @@ class Shivanshu_LoginViewController: UIViewController,UITextFieldDelegate {
     {
         let userEmailAdd = userEmail.text
         let user_Pass = userPass.text
+        
+        email = userEmail.text ?? "its nil" //Jashan Goyal
+        mainDelegate.selectedEmail = email //Jashan Goyal
+
+        print(mainDelegate.selectedEmail) //Jashan Goyal
         
         if(((userEmailAdd?.isEmpty) == true) || ((user_Pass?.isEmpty) == true))
         {

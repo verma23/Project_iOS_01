@@ -32,11 +32,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var theatres : [String] = []
     var img : [imageData] = []
+    var tickets : [TicketBook] = []      // By Jashan Goyal, this variable stores tickets in the array that we recieve from database IOSProject.db
     
     //var selectedQuestion : String = ""
     
     var selectedAnswer : String = ""
-
+    
+    var selectedTicketName : String = ""        // By Jashan Goyal, stores ticket Name and used in ticket and ticket detail view controller
+    var selectedTicketDate: String = ""         // By Jashan Goyal, stores ticket Date and used in ticket and ticket detail view controller
+    var selectedTicketTheatre : String = ""     // By Jashan Goyal, stores ticket Theatre and used in ticket and ticket detail view controller
+    var selectedTicketQuantity: String = ""     // By Jashan Goyal, stores ticket Quantity and used in ticket and ticket detail view controller
+    var selectedTicketSeats : String = ""       // By Jashan Goyal, stores ticket Seats and used in ticket and ticket detail view controller
+    var selectedTicketType: String = ""         // By Jashan Goyal, stores ticket Type and used in ticket and ticket detail view controller
+    var selectedTicketImage: String = ""        // By Jashan Goyal, stores ticket Image and used in ticket and ticket detail view controller
+    var selectedEmail: String = ""              // By Jashan Goyal, stores ticket Email and used in ticket and ticket detail view controller
+    var selectedMovie: String = ""  // By Jashan Goyal, stores the movie name
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -113,7 +123,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let fileManager = FileManager.default
             
             success = fileManager.fileExists(atPath: databasePath2!)
-            
+            print(databasePath2)
             if success{
                 return
             }
@@ -478,6 +488,62 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
  
+    // By Jashan Goyal
+    // This below method retrieves data from the database 'ticketBookings' and it is used by the app.
+    func readFromDataBaseBooking()
+    {
+        tickets.removeAll()
+       var  db1 : OpaquePointer? = nil
+        if sqlite3_open(self.databasePath2,  &db1) == SQLITE_OK
+        {
+            print("Success")
+            
+            var queryState1 : OpaquePointer? = nil
+            let queryStatementString1 : String = "select * from ticketBookings where email = '\(selectedEmail)'"
+            
+            if sqlite3_prepare_v2(db1, queryStatementString1, -1, &queryState1, nil) == SQLITE_OK {
+                
+                while sqlite3_step(queryState1) == SQLITE_ROW
+                {
+                    let id: Int = Int(sqlite3_column_int(queryState1, 0))
+                    let cMovieName = sqlite3_column_text(queryState1, 1)
+                    let cSeats = sqlite3_column_text(queryState1, 2 )
+                    let cDateTime = sqlite3_column_text(queryState1, 3)
+                    let cTicketType = sqlite3_column_text(queryState1, 4)
+                    let cTheatre = sqlite3_column_text(queryState1, 5)
+                    let cQuantity = sqlite3_column_text(queryState1, 6)
+                    let cImage = sqlite3_column_text(queryState1, 7)
+                    let cEmail = sqlite3_column_text(queryState1, 8)
+                    
+                    let movieName = String(cString: cMovieName!)
+                    let seats = String(cString: cSeats!)
+                    let dateTime = String(cString: cDateTime!)
+                    let ticketType = String(cString: cTicketType!)
+                    let theatre = String(cString: cTheatre!)
+                    let quantity = String(cString: cQuantity!)
+                    let image = String(cString: cImage!)
+                    let email = String(cString: cEmail!)
+                    
+                    let ticketBook : TicketBook = TicketBook.init()
+                    ticketBook.initWithData(theRow: id, theMoviename: movieName, theSeats: seats, theDateTume: dateTime, theTicketType: ticketType, theTheatre: theatre, theQuantity: quantity, theImage: image, theEmail: email)
+                    tickets.append(ticketBook)
+                    print("Result")
+                    print("\(id) | \(movieName) | \(ticketType) | \(image) |")
+                }
+                
+                sqlite3_finalize(queryState1)
+            }
+            else
+            {
+                print("Select Statement Error in else")
+            }
+            sqlite3_close(db1)
+        }
+        else{
+            print ("unable to open Database")
+        }
+    }
+    
     // MARK: UISceneSession Lifecycle
     
     func insertIntoDatabaseBookings(ticket : TicketBook) -> Bool {
@@ -486,7 +552,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if sqlite3_open(self.databasePath2,  &db) == SQLITE_OK{
             var insertStatement : OpaquePointer? = nil
-            var insertStatementString : String = "insert into ticketBookings values(NULL, ?, ?, ?, ?, ?, ?)"
+            let insertStatementString : String = "insert into ticketBookings values(NULL, ?, ?, ?, ?, ?, ?, ?, ?)"
             
             if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK{
                 let movienamStr = ticket.moviename! as NSString
@@ -495,7 +561,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let ticketTypeStr = ticket.ticketType! as NSString
                 let theatreStr = ticket.theatre! as NSString
                 let quantityStr = ticket.quantity! as NSString
-                
+                let imageStr = ticket.image! as NSString
+                let emailStr = ticket.email! as NSString
                 
                 sqlite3_bind_text(insertStatement, 1, movienamStr.utf8String, -1, nil)
                 sqlite3_bind_text(insertStatement, 2, seatsStr.utf8String, -1, nil)
@@ -503,7 +570,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 sqlite3_bind_text(insertStatement, 4, ticketTypeStr.utf8String, -1, nil)
                 sqlite3_bind_text(insertStatement, 5, theatreStr.utf8String, -1, nil)
                 sqlite3_bind_text(insertStatement, 6, quantityStr.utf8String, -1, nil)
-                
+                sqlite3_bind_text(insertStatement, 7, imageStr.utf8String, -1, nil)
+                sqlite3_bind_text(insertStatement, 8, emailStr.utf8String, -1, nil)
+
                 
                 if sqlite3_step(insertStatement) == SQLITE_DONE{
                     let rowID = sqlite3_last_insert_rowid(db)
@@ -529,6 +598,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return returnCode
     }
+
 
     // MARK: UIScen
 

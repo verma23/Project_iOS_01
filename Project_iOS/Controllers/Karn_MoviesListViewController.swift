@@ -74,7 +74,8 @@ extension Karn_MoviesListViewController: UICollectionViewDataSource, UICollectio
             dest.selection = movies[index.row].title
             dest.selection1 = movies[index.row].summary
             dest.selection3 = movies[index.row].trailer
-            
+            dest.selection4 = movies[index.row].imageName  //Jashan - sent to movie detail view controller
+    
         }
         // passing the email to Account ViewController
         if let dest1 = segue.destination as?  Shivanshu_AccountViewController{

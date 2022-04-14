@@ -13,7 +13,7 @@ class Anee_BookingViewController: UIViewController, UIPickerViewDelegate, UIPick
     var selection: String! // String variable for movie name
     var seatsLabel: String! // Karn Bhavsar - String variable for seats
     var updateSeat: String! // Karn Bhavsar - String variable for updated seats
-    
+    var selection2: String!
     
     @IBOutlet var slQuantity : UISlider! // Slider for tickets quantity
     @IBOutlet var lbQuantity : UILabel! // Label to store the slider value of quantity
@@ -183,7 +183,7 @@ class Anee_BookingViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBAction func addTickets(sender:Any){
         
         let ticket : TicketBook = TicketBook.init()
-        ticket.initWithData(theRow: 0, theMoviename: lbmovie.text!, theSeats: lbmovie.text!, theDateTume: lbdatetime.text!, theTicketType: lbtickettype.text!, theTheatre: lbTheatre.text!, theQuantity: lbQuantity.text!)
+        ticket.initWithData(theRow: 0, theMoviename: lbmovie.text!, theSeats: lbseats.text!, theDateTume: lbdatetime.text!, theTicketType: lbtickettype.text!, theTheatre: lbTheatre.text!, theQuantity: lbQuantity.text!,  theImage: mainDelegate.selectedMovie, theEmail: mainDelegate.selectedEmail)
 
         let mDelegate = UIApplication.shared.delegate as! AppDelegate
         
@@ -227,7 +227,8 @@ class Anee_BookingViewController: UIViewController, UIPickerViewDelegate, UIPick
         {
            lbmovie.text = movieName
         }
-        
+        print(mainDelegate.selectedMovie)
+
         updateQuantityLabel()
 
         // Do any additional setup after loading the view.

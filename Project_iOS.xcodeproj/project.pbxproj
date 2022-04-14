@@ -21,8 +21,12 @@
 		10D037F627DCEC2A0067720F /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 10D037F427DCEC1F0067720F /* libsqlite3.0.tbd */; };
 		10D037F727DCEC300067720F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 10D037F527DCEC1F0067720F /* libsqlite3.tbd */; };
 		10D037F927DCED1C0067720F /* Shivanshu_Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D037F827DCED1B0067720F /* Shivanshu_Data.swift */; };
+		1DE053412807E20F004CFA67 /* JashanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE053402807E20F004CFA67 /* JashanCell.swift */; };
+		1DE053432807E360004CFA67 /* blackBg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1DE053422807E360004CFA67 /* blackBg.jpeg */; };
+		1DE053462807E383004CFA67 /* JashanTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE053442807E383004CFA67 /* JashanTicketsViewController.swift */; };
+		1DE053472807E383004CFA67 /* JashanTicketDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE053452807E383004CFA67 /* JashanTicketDetailViewController.swift */; };
+		1DE053492807E40C004CFA67 /* IOSProject.db in Resources */ = {isa = PBXBuildFile; fileRef = 1DE053482807E40C004CFA67 /* IOSProject.db */; };
 		3E66BCC9971E913FE90A3D16 /* Pods_Project_iOS_Project_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2847E3F6A26FC303B235FE /* Pods_Project_iOS_Project_iOSUITests.framework */; };
-		9216110B27F2A186001FD1D6 /* IOSProject.db in Resources */ = {isa = PBXBuildFile; fileRef = 9216110A27F2A186001FD1D6 /* IOSProject.db */; };
 		9216110E27F2A45A001FD1D6 /* bookticket.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9216110C27F2A45A001FD1D6 /* bookticket.jpg */; };
 		9216110F27F2A45A001FD1D6 /* bookmyshow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9216110D27F2A45A001FD1D6 /* bookmyshow.jpg */; };
 		9216111127F2ACF9001FD1D6 /* Anee_HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216111027F2ACF9001FD1D6 /* Anee_HelpViewController.swift */; };
@@ -79,10 +83,14 @@
 		10D037F427DCEC1F0067720F /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		10D037F527DCEC1F0067720F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		10D037F827DCED1B0067720F /* Shivanshu_Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shivanshu_Data.swift; sourceTree = "<group>"; };
+		1DE053402807E20F004CFA67 /* JashanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JashanCell.swift; sourceTree = "<group>"; };
+		1DE053422807E360004CFA67 /* blackBg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blackBg.jpeg; sourceTree = "<group>"; };
+		1DE053442807E383004CFA67 /* JashanTicketsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JashanTicketsViewController.swift; sourceTree = "<group>"; };
+		1DE053452807E383004CFA67 /* JashanTicketDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JashanTicketDetailViewController.swift; sourceTree = "<group>"; };
+		1DE053482807E40C004CFA67 /* IOSProject.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = IOSProject.db; sourceTree = "<group>"; };
 		4F786B0D059BCC2D40CD83AC /* Pods-Project_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_iOS.release.xcconfig"; path = "Target Support Files/Pods-Project_iOS/Pods-Project_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		702DD3F709E08772D0AD36A2 /* Pods_Project_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2847E3F6A26FC303B235FE /* Pods_Project_iOS_Project_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_iOS_Project_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9216110A27F2A186001FD1D6 /* IOSProject.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = IOSProject.db; sourceTree = "<group>"; };
 		9216110C27F2A45A001FD1D6 /* bookticket.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bookticket.jpg; sourceTree = "<group>"; };
 		9216110D27F2A45A001FD1D6 /* bookmyshow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bookmyshow.jpg; sourceTree = "<group>"; };
 		9216111027F2ACF9001FD1D6 /* Anee_HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anee_HelpViewController.swift; sourceTree = "<group>"; };
@@ -174,8 +182,8 @@
 		10D037D727DC137A0067720F /* Databases */ = {
 			isa = PBXGroup;
 			children = (
+				1DE053482807E40C004CFA67 /* IOSProject.db */,
 				EA7AFB1B280283EA00E6079A /* imageData.db */,
-				9216110A27F2A186001FD1D6 /* IOSProject.db */,
 				10D037F127DC28F60067720F /* projDatabase.db */,
 			);
 			path = Databases;
@@ -193,6 +201,7 @@
 		10D037D927DC138F0067720F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1DE053402807E20F004CFA67 /* JashanCell.swift */,
 				E7FDE17B27EEC27600F8C78A /* MovieCollectionViewCell.swift */,
 				10D036DF27D029BE0067720F /* SceneDelegate.swift */,
 				10D036DD27D029BE0067720F /* AppDelegate.swift */,
@@ -207,6 +216,7 @@
 		10D037DA27DC13970067720F /* Assests */ = {
 			isa = PBXGroup;
 			children = (
+				1DE053422807E360004CFA67 /* blackBg.jpeg */,
 				10D036E627D029BF0067720F /* Assets.xcassets */,
 			);
 			path = Assests;
@@ -215,6 +225,8 @@
 		10D037DB27DC139F0067720F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1DE053452807E383004CFA67 /* JashanTicketDetailViewController.swift */,
+				1DE053442807E383004CFA67 /* JashanTicketsViewController.swift */,
 				10D036E127D029BE0067720F /* Karn_MoviesListViewController.swift */,
 				10D037DD27DC13DE0067720F /* Shivanshu_LoginViewController.swift */,
 				10D037DF27DC13EC0067720F /* Shivanshu_RegisterViewController.swift */,
@@ -379,8 +391,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				10D036EA27D029BF0067720F /* LaunchScreen.storyboard in Resources */,
-				9216110B27F2A186001FD1D6 /* IOSProject.db in Resources */,
+				1DE053432807E360004CFA67 /* blackBg.jpeg in Resources */,
 				10D036E727D029BF0067720F /* Assets.xcassets in Resources */,
+				1DE053492807E40C004CFA67 /* IOSProject.db in Resources */,
 				9216110E27F2A45A001FD1D6 /* bookticket.jpg in Resources */,
 				9278D07027F3CE9D0025708C /* back.jpg in Resources */,
 				EAF3A80928036D67002D842E /* displayIcon.png in Resources */,
@@ -517,12 +530,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DE053462807E383004CFA67 /* JashanTicketsViewController.swift in Sources */,
 				10D037DE27DC13DE0067720F /* Shivanshu_LoginViewController.swift in Sources */,
 				EA7AFB1827FEC5D800E6079A /* Shivanshu_PhotoViewController.swift in Sources */,
 				10D037F927DCED1C0067720F /* Shivanshu_Data.swift in Sources */,
 				10D037E027DC13EC0067720F /* Shivanshu_RegisterViewController.swift in Sources */,
 				10D036E227D029BE0067720F /* Karn_MoviesListViewController.swift in Sources */,
 				E7FDE17C27EEC27600F8C78A /* MovieCollectionViewCell.swift in Sources */,
+				1DE053412807E20F004CFA67 /* JashanCell.swift in Sources */,
 				10D036DE27D029BE0067720F /* AppDelegate.swift in Sources */,
 				EA7AFB1A27FEC6E700E6079A /* imageData.swift in Sources */,
 				EA7AFB1627FEAD1500E6079A /* Shivanshu_AccountViewController.swift in Sources */,
@@ -533,6 +548,7 @@
 				92FED52C27F2652600E6ECF7 /* Anee_BookingViewController.swift in Sources */,
 				10D036E027D029BE0067720F /* SceneDelegate.swift in Sources */,
 				E73034E12803B3DE00B02C70 /* Karn_SeatsSeclectionViewController.swift in Sources */,
+				1DE053472807E383004CFA67 /* JashanTicketDetailViewController.swift in Sources */,
 				9231607527F269EF0051668D /* TicketBook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
